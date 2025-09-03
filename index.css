@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'Neue_Regular';
+  src: url(fonts/Neue_Regular.ttf);
+}
+body {
+    background-color: #e1f4ff;
+
+}
+nav {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 0;
+  background: white; 
+  height: 90px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+nav ul {
+  list-style: none; 
+  display: flex;
+  margin: 50px;
+  padding: 0;
+  gap: 20px; /* Modern browsers */
+}
+nav ul li:not(:last-child) {
+  margin-right: 20px; /* Fallback for older browsers */
+}
+nav ul li a {
+  position: relative;
+  text-decoration: none; 
+  color: #dc3d87;
+  font-weight: 500;
+  font-size: 22px;
+  transition: 0.3s;
+  margin-right: 10px;
+  left: 1px;
+  top: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+.logo {
+  position: relative;
+  height: auto;   
+  width: 300px;   
+  left: 1px;
+  
+} 
+.btn-signin {
+  background-color: #51aee5;  
+  color: #fff;                
+  padding: 5px 40px;       
+  border: none;
+  border-radius: 5px;        
+  text-decoration: none;      
+  font-weight: 700;
+  font-size: 21px;           
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: inline-block;     
+  text-align: center;     
+  font-family: 'Poppins', sans-serif;   
+}
+
+.btn-signin:hover {
+  background-color: #0056b3; 
+}
+
+.hero-text {
+  font-size: 30px;       
+  font-weight: 100;    
+  color: #3399cc;        
+  line-height: 1.2;      
+  margin-left: 60px;  
+  margin-top: 50px;           
+  
+  font-family: 'Open Sans', Arial, sans-serif; 
+  
+}
+.circle-img {
+  position: absolute;
+  right: 0;
+  top: 150px;   
+  width: 700px;
+}
+.doctor-img {
+  position: absolute;
+  right: 0;
+  top: 120px;   
+  width: 800px;
+  left: 1200px;
+}
