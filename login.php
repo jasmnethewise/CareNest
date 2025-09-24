@@ -32,6 +32,23 @@ function isActive($form, $active_form) {
     <link rel="icon" href="data:,">
 </head>
 <body>
+    
+    <div class="background">
+        <img src="images/heart_icon.png" class="heart" style="--x:0.1; --d:0.3; --delay:0.2;">
+        <img src="images/heart_icon.png" class="heart" style="--x:0.25; --d:0.5; --delay:0.6;">
+        <img src="images/heart_icon.png" class="heart" style="--x:0.5; --d:0.8; --delay:0.1;">
+        <img src="images/heart_icon.png" class="heart" style="--x:0.7; --d:0.4; --delay:0.9;">
+        <img src="images/heart_icon.png" class="heart" style="--x:0.9; --d:0.7; --delay:0.3;">
+        <img src="images/heart_icon.png" class="heart">
+        <img src="images/heart_icon.png" class="heart">
+        <img src="images/heart_icon.png" class="heart">
+        <img src="images/heart_icon.png" class="heart">
+
+    </div>
+
+
+<!-- Main login/register forms section -->
+
     <div class="container">
         <div class="right-side">
             <div class="form-box active" id="login-form">
