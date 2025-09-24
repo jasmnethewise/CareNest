@@ -11,10 +11,10 @@ $active_form = $_SESSION['active_form'] ?? 'login';
 session_unset();
 
 function showEror($error) {
-    return !empty($error) ? "<p class='eror-message'>$error</p>" : '';
+    return !empty($error) ? "<p class='error-message'>$error</p>" : '';
 }
 
-function isActive($form, $active_form) {
+function isActiveForm($form, $active_form) {
     return $form === $active_form ? 'active' : '';
 
 }
@@ -51,9 +51,10 @@ function isActive($form, $active_form) {
 
     <div class="container">
         <div class="right-side">
-            <div class="form-box active" id="login-form">
+            <div class="form-box <?= isActiveForm('login', $active_form); ?> " id="login-form">
                 <form action="CareNest.php" method="post">
                     <h2>Login</h2>
+                    <?= showEror($errors['login']) ?>
                     <input type="email" name="email" placeholder="Email" required>
                     <input type="password" name="password" placeholder="Password" required>
                     <button type="submit" name="login" >Login</button>
@@ -68,9 +69,10 @@ function isActive($form, $active_form) {
                 <p>Don't have an account? <a href="#" onclick="showForm('register-form')">Create account</a></p>
             </div>
 
-            <div class="form-box"  id="register-form">
+            <div class="form-box <?= isActiveForm('register', $active_form); ?>"  id="register-form">
                 <form action="CareNest.php" method="post">
                     <h2>Create account</h2>
+                    <?= showEror($errors['register']) ?>
                     <input type="text" name="name" placeholder="Username" required>
                     <input type="email" name="email" placeholder="Email" required>
                     <input type="password" name="password" placeholder="Password" required>

@@ -1,6 +1,4 @@
 <?php
-
-
 session_start();
 require_once 'config.php';
 
@@ -13,16 +11,14 @@ if (isset($_POST['register'])) {
     $checkEmail = $conn->query("SELECT email FROM users WHERE email='$email'");
     if ($checkEmail->num_rows > 0) {
         $_SESSION['register_error'] = "Email already exists.";
-        $SESSION['active_form'] = 'register';
+        $_SESSION['active_form'] = 'register';
     } else {
         $conn->query("INSERT INTO users (name, email, password, role) VALUES ('$name', '$email', '$password', '$role')");
     }
 
+    header("Location: login.php");
+    exit();
 }
-
-header("Location: login.php");
-exit();
-
 
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
@@ -35,7 +31,7 @@ if (isset($_POST['login'])) {
             $_SESSION['name'] = $user['name'];
             $_SESSION['email'] = $user['email'];
 
-            if ($user['role' === 'admin']) {
+            if ($user['role'] === 'admin') {
                 header("Location: admin_page.php");
             } else {
                 header("Location: user_page.php");
@@ -44,17 +40,9 @@ if (isset($_POST['login'])) {
         }
     }
 
-    $_SESSION['login_eror'] = 'Incorrect email or password';
-    $SESSION['active_form'] = 'login';
+    $_SESSION['login_error'] = 'Incorrect email or password';
+    $_SESSION['active_form'] = 'login';
     header("Location: login.php");
     exit();
-
-
-
 }
-
-
-
-
-
 ?>
