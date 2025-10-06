@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareNest</title>
+    <link rel="stylesheet" href="user_page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+         <img src="images/CareNest.png" alt="CareNest Logo" class="logo">
+         <ul>
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="#">Services</a></li> 
+            <li><a href="#">Chatbot</a></li> 
+            <li><a href="#">Dashboard</a></li> 
+            
+        </ul>
+
+        <div class="profile">
+            <a href="profile.php"><i class="fa-solid fa-user"></i></a>
+        </div>
+        
+    </nav>
+    <img src="images/caree1.png" class="main-img">
+    <p class="hero-text">
+        CareNest is a digital healthcare platform that provides simple and smart tools <br> for your well-being. From booking doctor consultations, calculating your BMI, <br> and exploring nearby health services, to chatting with our healthcare assistant, <br>everything is in one place. Our goal is to make healthcare more accessible and <br>easier for everyone.
+    </p>
+    
+
+    <div class="blue-line"></div>
+    <h1 class="discover">DISCOVER OUR SERVICES</h1>
+    <!-- <img src="images/des1.png" alt="CareNest Logo" class="des"> -->
+
+    <div class="boxes-container">
+        <div class="box1">
+            <img src="images/roobot.png" alt="Chatbot" class="robot-icon">
+            <h2>Chatbot</h2>
+        </div>
+        <div class="box2">
+            <img src="images/BMI_icon.png" alt="BMI" class="bmi-icon">
+            <h2>BMI</h2>
+        </div>
+        <div class="box3">
+            <img src="images/booking_icon.png" alt="Booking" class="booking-icon">
+            <h2>Booking</h2>
+        </div>
+        
+    </div>
+    <div class="blue-line"></div>
+    <!-- Contact Us Section -->
+<section class="contact-section">
+  <h1>Contact Us</h1>
+  <p>Any questions or remarks? Just write us a message!</p>
+
+  <form class="contact-form">
+    <input type="email" placeholder="Enter a valid email address" required>
+    <input type="text" placeholder="Enter your Name" required>
+    <button type="submit">SUBMIT</button>
+  </form>
+
+  <div class="contact-info">
+    <div class="info-box">
+      <img src="images/plus.jpeg" alt="About Icon" class="icon-img">
+      <h3>ABOUT CLUB</h3>
+      <p>Running Guide<br>booking</p>
+    </div>
+    <div class="info-box">
+      <img src="images/phone.jpeg" alt="Phone Icon" class="icon-img">
+      <h3>PHONE (LANDLINE)</h3>
+      <p>+20 1557142424<br>+20 1559512367</p>
+    </div>
+    <div class="info-box">
+      <img src="images/location.jpeg" alt="Location Icon" class="icon-img">
+      <h3>OUR OFFICE LOCATION</h3>
+      <p>The Interior Design Studio Company</p>
+    </div>
+  </div>
+</section>
+</body>
+</html>

@@ -40,24 +40,25 @@ body {
 }
 
 nav {
-  display: flex;
-  justify-content: space-between; /* اللوجو شمال و ☰ يمين */
-  align-items: center;
-  padding: 10px 20px; /* padding صغير عشان الناف بار يبقى رفيع */
-  background: white;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 0;
+  background: white; 
   height: 60px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 nav ul {
   list-style: none; 
   display: flex;
-  margin: 0;
+  margin: 50px;
   padding: 0;
   gap: 20px;
 }
 nav ul li:not(:last-child) {
-  margin-right: 10px;
-  margin-top: 4px; 
+  margin-right: 20px; 
 }
 nav ul li a {
   position: relative;
@@ -67,14 +68,27 @@ nav ul li a {
   font-size: 17px;
   transition: 0.3s;
   margin-right: 10px;
-  
+  left: 1px;
+  top: 1px;
   font-family: 'Poppins', sans-serif;
+}
+.profile {
+  margin-right: 70px;  /* يبعدها شوية عن الطرف */
+}
+.profile a {
+  color: #dc3d87;       /* نفس ألوان الموقع */
+  font-size: 26px;      /* حجم الأيقونة */
+  transition: 0.3s;
+}
+.profile a:hover {
+  color: #51aee5;       /* لون عند الـ hover */
+  transform: scale(1.2); /* تكبير بسيط */
 }
 .logo {
   position: relative;
   height: auto;   
   width: 230px;   
- 
+  left: 1px;
   
 } 
 .btn-signin {
@@ -132,33 +146,11 @@ nav ul li a {
   top: 90px;
   margin-left: 50px;  
 }
-.btn {
-  display: block;      
-  margin: 0 auto;
-  background-color: #51aee5;  
-  color: #fff;                
-  padding: 10px 30px;         
-  border: none;
-  border-radius: 25px;         
-  font-size:20px;            
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;      
-  font-family: 'Poppins', sans-serif;
-  margin-top: 120px;
-}
-.btn:hover {
-  background-color: #3399cc; 
-  transform: scale(1.05);   
-}
-a {
-  text-decoration: none;
-}
 .blue-line {
   width: 100%;
   height: 10px;          
   background-color: #51aee5; 
-  margin-top: 70px;     
+  margin-top: 150px;     
 }
 .discover {
   text-align: center;
@@ -265,88 +257,11 @@ a {
 
 }
 .box1:hover, .box2:hover, .box3:hover {
-  background: #e0e0e0;
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(223, 195, 195, 0.2);
-  cursor: pointer; 
-  transition: all 0.3s ease-in-out;
-}
-
-.menu-toggle {
-  display: none; 
-  font-size: 30px;
-  cursor: pointer;
-  color: #dc3d87;
-}
-
-@media (max-width: 768px) {
-  nav {
-    flex-direction: row;       /* اللوجو شمال و ☰ يمين */
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;              /* تخلي الناف بار رفيع */
-    padding: 10px 20px;
-  }
-
-  .logo {
-    width: 150px; /* تصغير اللوجو شوية */
-  }
-
-  .menu-toggle {
-    display: block; 
-    margin-right: 15px;
-    z-index: 1100;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: -250px;   
-    width: 250px;
-    height: 100%;
-    background: white;
-    padding-top: 60px; 
-    gap: 20px;
-    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-    transition: right 0.3s ease;
-    z-index: 1000;
-
-    text-align: right;    
-    align-items: flex-end; 
-    padding-right: 20px;
-  }
-
-  nav ul.show {
-    display: flex;
-    right: 0;
-  }
-
-  /* باقي العناصر */
-  .main-img {
-    width: 90%; 
-    margin-top: 20px;
-  }
-
-  .hero-text {
-    font-size: 18px; 
-    padding: 0 15px; 
-  }
-
-  .discover {
-    font-size: 30px; 
-  }
-
-  .boxes-container {
-    flex-direction: column; 
-    padding: 20px;
-  }
-
-  .boxes-container div {
-    height: auto;
-    margin-bottom: 20px;
-  }
+  background: #e0e0e0; /* يغير اللون */
+  transform: scale(1.05); /* يعمل تكبير بسيط */
+  box-shadow: 0 8px 20px rgba(223, 195, 195, 0.2); /* يضيف شادو */
+  cursor: pointer; /* يغير شكل الماوس */
+  transition: all 0.3s ease-in-out; /* يخليها ناعمة */
 }
 /* ===== Contact Us Section ===== */
 .contact-section {
@@ -480,3 +395,6 @@ a {
     width: 90%;
   }
 }
+
+
+
