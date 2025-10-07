@@ -140,13 +140,6 @@ nav ul li a {
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-.des {
-  position: relative;
-  width: 500px;
-  top: 90px;
-  margin-left: 50px;  
-}
-
 .btn {
   display: block;      
   margin: 0 auto;
@@ -168,6 +161,12 @@ nav ul li a {
 }
 a {
   text-decoration: none;
+}
+.des {
+  position: relative;
+  width: 500px;
+  top: 90px;
+  margin-left: 50px;  
 }
 .blue-line {
   width: 100%;

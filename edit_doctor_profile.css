@@ -1,0 +1,117 @@
+/* ====== General Page Style ====== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(270deg, rgba(81, 174, 229, 0.3), rgba(100, 200, 255, 0.3), rgba(62, 192, 255, 0.3));
+  background-size: 600% 600%;
+  animation: gradientMove 15s ease infinite;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 0;
+}
+
+/* ====== Container ====== */
+.edit-profile-container {
+  background: #fff;
+  width: 500px;
+  max-width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 35px;
+  text-align: center;
+}
+
+/* ====== Title ====== */
+h2 {
+  color: #dc3d87;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+/* ====== Profile Picture ====== */
+.profile-pic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.profile-pic img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #dc3d87;
+  background: #f1f1f1;
+}
+
+.profile-pic input {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* ====== Form Fields ====== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.2s;
+  outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #00b4d8;
+  box-shadow: 0 0 4px rgba(0, 180, 216, 0.4);
+}
+
+textarea {
+  resize: none;
+  height: 90px;
+}
+
+/* ====== Save Button ====== */
+button {
+  background: #dc3d87;
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0096c7;
+}
+
+/* ====== Back Link ====== */
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #0077b6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

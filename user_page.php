@@ -11,8 +11,8 @@
     <nav>
          <img src="images/CareNest.png" alt="CareNest Logo" class="logo">
          <ul>
-            <li><a href="index.html">Home</a></li> 
-            <li><a href="#">Services</a></li> 
+            <li><a href="user_page.php">Home</a></li> 
+            <li><a href="services.php">Services</a></li> 
             <li><a href="#">Chatbot</a></li> 
             <li><a href="#">Dashboard</a></li> 
             
@@ -27,6 +27,7 @@
     <p class="hero-text">
         CareNest is a digital healthcare platform that provides simple and smart tools <br> for your well-being. From booking doctor consultations, calculating your BMI, <br> and exploring nearby health services, to chatting with our healthcare assistant, <br>everything is in one place. Our goal is to make healthcare more accessible and <br>easier for everyone.
     </p>
+    <a href="#"><button class="btn">BOOK NOW</button></a>
     
 
     <div class="blue-line"></div>
