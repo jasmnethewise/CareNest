@@ -21,7 +21,7 @@ if (!$doctor) {
 
 $profile_pic = !empty($doctor['profile_pic']) ? $doctor['profile_pic'] : 'images/pfp.png';
 
-// فك الشيفرة بتاعة المواعيد
+
 $available_times = !empty($doctor['available_times']) ? json_decode($doctor['available_times'], true) : [];
 ?>
 
@@ -55,7 +55,7 @@ $available_times = !empty($doctor['available_times']) ? json_decode($doctor['ava
                     <a href="#" class="book-btn inperson" id="openInPersonFormBtn">In-Person Visit</a>
                 </div>
 
-                <!-- Modal -->
+                
                 <div class="modal" id="bookingModal">
                     <div class="modal-content">
                         <span class="close-btn" id="closeFormBtn">&times;</span>
@@ -64,7 +64,7 @@ $available_times = !empty($doctor['available_times']) ? json_decode($doctor['ava
                             <input type="hidden" name="doctor_id" value="<?php echo $doctor_id; ?>">
                             <input type="hidden" name="appointment_type" id="appointment_type" value="">
 
-                            <!-- اختيار اليوم -->
+                            
                             <label for="day">Choose Day:</label>
                             <select name="day" id="day" required>
                                 <option value="">Select...</option>
@@ -80,13 +80,13 @@ $available_times = !empty($doctor['available_times']) ? json_decode($doctor['ava
                                 ?>
                             </select>
 
-                            <!-- اختيار الوقت -->
+                            
                             <label for="time">Choose Time:</label>
                             <select name="time" id="time" required>
                                 <option value="">Select day first...</option>
                             </select>
 
-                            <!-- اختيار المكان -->
+                            
                             <div id="locationField" style="display:none;">
                                 <label for="location">Select Location:</label>
                                 <select name="location" id="location">
@@ -105,7 +105,7 @@ $available_times = !empty($doctor['available_times']) ? json_decode($doctor['ava
                                 </select>
                             </div>
 
-                            <!-- وسيلة التواصل -->
+                            
                             <div id="methodField">
                                 <label for="contact">Contact Method:</label>
                                 <select name="contact" id="contact">
@@ -132,75 +132,101 @@ const inPersonBtn = document.getElementById('openInPersonFormBtn');
 const appointmentType = document.getElementById('appointment_type');
 const locationField = document.getElementById('locationField');
 const methodField = document.getElementById('methodField');
-
-// بيانات الأوقات من PHP
-const availableTimes = <?php echo json_encode($available_times); ?>;
-
-// لما المستخدم يختار يوم
 const daySelect = document.getElementById('day');
 const timeSelect = document.getElementById('time');
 
-daySelect.addEventListener('change', function() {
-    const selectedDay = this.value;
-    timeSelect.innerHTML = '<option value="">Select...</option>';
 
-    const slots = availableTimes.filter(slot => slot.day.trim().toLowerCase() === selectedDay.trim().toLowerCase());
-    if (slots.length > 0) {
-        const slot = slots[0]; // Assuming one slot per day
-        const fromTime = slot.from;
-        const toTime = slot.to;
+const availableTimes = <?php echo json_encode($available_times); ?>;
 
-        // توليد أوقات بين from و to كل نص ساعة
-        let start = new Date(`1970-01-01T${fromTime}:00`);
-        let end = new Date(`1970-01-01T${toTime}:00`);
-        while (start < end) {
-            const timeStr = start.toTimeString().slice(0,5);
-            const option = document.createElement('option');
-            option.value = timeStr;
-            option.textContent = timeStr;
-            timeSelect.appendChild(option);
-            start.setMinutes(start.getMinutes() + 30);
-        }
-    } else {
+
+function parseTime(timeStr) {
+  let [hours, minutes] = timeStr.split(':').map(Number);
+
+  if (hours < 8) hours += 12;
+  return { hours, minutes };
+}
+
+
+function generateTimeSlots(from, to) {
+  const slots = [];
+  const fromTime = parseTime(from);
+  const toTime = parseTime(to);
+
+  let start = new Date();
+  start.setHours(fromTime.hours, fromTime.minutes, 0);
+
+  let end = new Date();
+  end.setHours(toTime.hours, toTime.minutes, 0);
+
+  while (start < end) {
+    let next = new Date(start.getTime() + 30 * 60000); 
+    const startStr = start.toTimeString().slice(0, 5);
+    const endStr = next.toTimeString().slice(0, 5);
+    slots.push(`${startStr} - ${endStr}`);
+    start = next;
+  }
+  return slots;
+}
+
+
+daySelect.addEventListener('change', function () {
+  const selectedDay = this.value;
+  timeSelect.innerHTML = '<option value="">Select...</option>';
+
+  
+  const slots = availableTimes.filter(
+    (slot) => slot.day.trim().toLowerCase() === selectedDay.trim().toLowerCase()
+  );
+
+  if (slots.length > 0) {
+    slots.forEach((slot) => {
+      const ranges = generateTimeSlots(slot.from, slot.to);
+      ranges.forEach((range) => {
         const option = document.createElement('option');
-        option.textContent = 'No available times for this day';
-        option.disabled = true;
+        option.value = range;
+        option.textContent = range;
         timeSelect.appendChild(option);
-    }
+      });
+    });
+  } else {
+    const option = document.createElement('option');
+    option.textContent = 'No available times for this day';
+    option.disabled = true;
+    timeSelect.appendChild(option);
+  }
 });
 
 
-
 function openModal(type) {
-    appointmentType.value = type;
-    modal.style.display = 'flex';
-    if (type === 'inperson') {
-        locationField.style.display = 'block';
-        methodField.style.display = 'none';
-    } else {
-        locationField.style.display = 'none';
-        methodField.style.display = 'block';
-    }
+  appointmentType.value = type;
+  modal.style.display = 'flex';
+  if (type === 'inperson') {
+    locationField.style.display = 'block';
+    methodField.style.display = 'none';
+  } else {
+    locationField.style.display = 'none';
+    methodField.style.display = 'block';
+  }
 }
 
-onlineBtn.onclick = function(e) {
-    e.preventDefault();
-    openModal('online');
+onlineBtn.onclick = function (e) {
+  e.preventDefault();
+  openModal('online');
 };
 
-inPersonBtn.onclick = function(e) {
-    e.preventDefault();
-    openModal('inperson');
+inPersonBtn.onclick = function (e) {
+  e.preventDefault();
+  openModal('inperson');
 };
 
-closeBtn.onclick = function() {
+closeBtn.onclick = function () {
+  modal.style.display = 'none';
+};
+
+window.onclick = function (e) {
+  if (e.target === modal) {
     modal.style.display = 'none';
-};
-
-window.onclick = function(e) {
-    if (e.target == modal) {
-        modal.style.display = 'none';
-    }
+  }
 };
 </script>
 

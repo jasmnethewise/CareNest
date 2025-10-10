@@ -13,7 +13,7 @@ $query = "SELECT name, profile_pic, pronouns FROM users WHERE id = '$user_id'";
 $result = mysqli_query($conn, $query);
 $user = mysqli_fetch_assoc($result);
 
-// صورة افتراضية لو مفيش صورة محفوظة
+
 $profile_pic = !empty($user['profile_pic']) ? $user['profile_pic'] : 'images/pfp.png';
 ?>
 
@@ -37,7 +37,7 @@ $profile_pic = !empty($user['profile_pic']) ? $user['profile_pic'] : 'images/pfp
 
     <a href="edit_profile.php" class="edit-btn">Edit Profile</a>
 
-    <!-- زرار اللوج آوت تحت زرار الإيدت -->
+    
     <a href="logout.php" class="logout-btn">Logout</a>
 </div>
 </body>

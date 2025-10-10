@@ -10,15 +10,14 @@ if (!isset($_SESSION['id'])) {
 $viewer_id = $_SESSION['id'];
 $viewer_role = $_SESSION['role'] ?? null;
 
-// من نعدل؟ افتراضي نفس اللي في الجلسة، اما اذا الادمن مرر doctor_id نستخدمه
 $edit_id = isset($_GET['doctor_id']) ? intval($_GET['doctor_id']) : $viewer_id;
 
-// صلاحية: لو بتحاول تعدل حساب غيرك وانت مش admin -> ممنوع
+
 if ($edit_id !== $viewer_id && $viewer_role !== 'admin') {
     die("Not authorized to edit this profile.");
 }
 
-// جلب بيانات المستخدم (الدكتور)
+
 $stmt = $conn->prepare("SELECT id, name, profile_pic, specialization, phone, location, available_days, available_times, pronouns, hospital_locations FROM users WHERE id = ?");
 $stmt->bind_param("i", $edit_id);
 $stmt->execute();
@@ -30,7 +29,7 @@ if ($res->num_rows === 0) {
 $user = $res->fetch_assoc();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // sanitize basic fields
+   
     $name = mysqli_real_escape_string($conn, $_POST['name'] ?? '');
     $pronouns = mysqli_real_escape_string($conn, $_POST['pronouns'] ?? '');
     $specialization = mysqli_real_escape_string($conn, $_POST['specialization'] ?? '');
@@ -40,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ? json_encode($_POST['available_days'], JSON_UNESCAPED_UNICODE) 
     : json_encode([]);
 
-// ✅ نحفظ الأوقات كـ JSON
+
 $available_times_json = [];
 if (!empty($_POST['available_times']) && is_array($_POST['available_times'])) {
     foreach ($_POST['available_times'] as $slot) {
@@ -51,7 +50,7 @@ if (!empty($_POST['available_times']) && is_array($_POST['available_times'])) {
 }
 $available_times_json = json_encode($available_times_json, JSON_UNESCAPED_UNICODE);
 
-    // معالجة مستشفيات متعددة
+   
     $hospitals = array();
     if (!empty($_POST['hospital_locations']) && is_array($_POST['hospital_locations'])) {
         foreach ($_POST['hospital_locations'] as $h) {
@@ -61,7 +60,7 @@ $available_times_json = json_encode($available_times_json, JSON_UNESCAPED_UNICOD
     }
     $hospital_locations = mysqli_real_escape_string($conn, implode(", ", $hospitals));
 
-    // رفع الصورة إن وجدت
+    
     $profile_pic = $user['profile_pic'];
     if (!empty($_FILES['profile_pic']['name'])) {
         $target_dir = "uploads/";
@@ -74,12 +73,12 @@ $available_times_json = json_encode($available_times_json, JSON_UNESCAPED_UNICOD
         }
     }
 
-    // تحديث بيانات المستخدم (prepared statement)
+   
     $upd = $conn->prepare("UPDATE users SET name=?, pronouns=?, specialization=?, phone=?, location=?, available_days=?, available_times=?, hospital_locations=?, profile_pic=? WHERE id=?");
     $upd->bind_param("sssssssssi", $name, $pronouns, $specialization, $phone, $location, $available_days_json, $available_times_json, $hospital_locations, $profile_pic, $edit_id);
     $upd->execute();
 
-    // بعد الحفظ: لو الادمن بيعدل غيره نرجع لصفحة الدكتور اللي عدّلناه، والا نرجع لصفحتنا
+    
     if ($viewer_role === 'admin' && $edit_id !== $viewer_id) {
         header("Location: doctor_profile.php?doctor_id=".$edit_id);
     } else {
@@ -88,7 +87,7 @@ $available_times_json = json_encode($available_times_json, JSON_UNESCAPED_UNICOD
     exit();
 }
 
-// لتحضير الحقول المتعددة (عرض أولي)
+
 $existing_hospitals = array_filter(array_map('trim', explode(',', $user['hospital_locations'] ?? '')));
 ?>
 
@@ -221,7 +220,7 @@ const addTimeSlotBtn = document.getElementById('addTimeSlotBtn');
 const timeSlotsContainer = document.getElementById('timeSlotsContainer');
 let slotCount = timeSlotsContainer.querySelectorAll('.time-slot').length;
 
-// ✅ زرار الإضافة
+
 addTimeSlotBtn.addEventListener('click', ()=> {
   const div = document.createElement('div');
   div.classList.add('time-slot');
@@ -250,7 +249,7 @@ addTimeSlotBtn.addEventListener('click', ()=> {
   slotCount++;
 });
 
-// ✅ زرار الحذف
+
 document.addEventListener('click', function(e) {
   if (e.target.classList.contains('delete-slot')) {
     e.target.parentElement.remove();

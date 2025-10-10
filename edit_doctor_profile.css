@@ -1,4 +1,4 @@
-/* ====== General Page Style ====== */
+
 body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(270deg, rgba(81, 174, 229, 0.3), rgba(100, 200, 255, 0.3), rgba(62, 192, 255, 0.3));
@@ -12,7 +12,6 @@ body {
   padding: 50px 0;
 }
 
-/* ====== Container ====== */
 .profile-container {
   background: #fff;
   width: 600px;
@@ -23,14 +22,14 @@ body {
   text-align: center;
 }
 
-/* ====== Title ====== */
+
 h2 {
   color: #dc3d87;
   margin-bottom: 25px;
   font-size: 24px;
 }
 
-/* ====== Profile Picture ====== */
+
 .profile-pic {
   display: flex;
   flex-direction: column;
@@ -53,7 +52,6 @@ h2 {
   cursor: pointer;
 }
 
-/* ====== Form Fields ====== */
 form {
   display: flex;
   flex-direction: column;
@@ -89,7 +87,7 @@ textarea {
   height: 90px;
 }
 
-/* ====== Save Button ====== */
+
 button {
   background: #dc3d87;
   color: white;
@@ -106,7 +104,7 @@ button:hover {
   background: #0096c7;
 }
 
-/* ====== Back Link ====== */
+
 .back-link {
   display: inline-block;
   margin-top: 20px;
@@ -118,7 +116,7 @@ button:hover {
 .back-link:hover {
   text-decoration: underline;
 }
-/* ====== Add Hospital Button ====== */
+
 .add-btn {
   background: #00b4d8;
   color: white;

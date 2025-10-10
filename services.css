@@ -42,16 +42,16 @@ nav ul li a {
   font-family: 'Poppins', sans-serif;
 }
 .profile {
-  margin-right: 70px;  /* يبعدها شوية عن الطرف */
+  margin-right: 70px;
 }
 .profile a {
-  color: #dc3d87;       /* نفس ألوان الموقع */
-  font-size: 26px;      /* حجم الأيقونة */
+  color: #dc3d87;       
+  font-size: 26px;      
   transition: 0.3s;
 }
 .profile a:hover {
-  color: #51aee5;       /* لون عند الـ hover */
-  transform: scale(1.2); /* تكبير بسيط */
+  color: #51aee5;      
+  transform: scale(1.2); 
 }
 .logo {
   position: relative;

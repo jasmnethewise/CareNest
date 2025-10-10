@@ -38,7 +38,7 @@
 
     <div class="blue-line"></div>
     <h1 class="discover">DISCOVER OUR SERVICES</h1>
-    <!-- <img src="images/des1.png" alt="CareNest Logo" class="des"> -->
+    
 
     <div class="boxes-container">
         <div class="box1">
@@ -56,7 +56,8 @@
         
     </div>
     <div class="blue-line"></div>
-    <!-- Contact Us Section -->
+    
+    
 <section class="contact-section">
   <h1>Contact Us</h1>
   <p>Any questions or remarks? Just write us a message!</p>

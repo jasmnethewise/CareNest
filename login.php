@@ -42,7 +42,7 @@ function isActiveForm($form, $active_form) {
     </div>
 
 
-<!-- Main login/register forms section -->
+
 
     <div class="container">
         <div class="right-side">

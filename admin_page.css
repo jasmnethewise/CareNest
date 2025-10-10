@@ -73,16 +73,16 @@ nav ul li a {
   font-family: 'Poppins', sans-serif;
 }
 .profile {
-  margin-right: 70px;  /* يبعدها شوية عن الطرف */
+  margin-right: 70px;  
 }
 .profile a {
-  color: #dc3d87;       /* نفس ألوان الموقع */
-  font-size: 26px;      /* حجم الأيقونة */
+  color: #dc3d87;       
+  font-size: 26px;      
   transition: 0.3s;
 }
 .profile a:hover {
-  color: #51aee5;       /* لون عند الـ hover */
-  transform: scale(1.2); /* تكبير بسيط */
+  color: #51aee5;       
+  transform: scale(1.2); 
 }
 .logo {
   position: relative;
@@ -279,11 +279,11 @@ a {
 
 }
 .box1:hover, .box2:hover, .box3:hover {
-  background: #e0e0e0; /* يغير اللون */
-  transform: scale(1.05); /* يعمل تكبير بسيط */
-  box-shadow: 0 8px 20px rgba(223, 195, 195, 0.2); /* يضيف شادو */
-  cursor: pointer; /* يغير شكل الماوس */
-  transition: all 0.3s ease-in-out; /* يخليها ناعمة */
+  background: #e0e0e0;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(223, 195, 195, 0.2); 
+  cursor: pointer;
+  transition: all 0.3s ease-in-out; 
 }
 .menu-toggle {
   display: none; 
@@ -294,15 +294,15 @@ a {
 
 @media (max-width: 768px) {
   nav {
-    flex-direction: row;       /* اللوجو شمال و ☰ يمين */
+    flex-direction: row;       
     justify-content: space-between;
     align-items: center;
-    height: 60px;              /* تخلي الناف بار رفيع */
+    height: 60px;            
     padding: 10px 20px;
   }
 
   .logo {
-    width: 150px; /* تصغير اللوجو شوية */
+    width: 150px; 
   }
 
   .menu-toggle {
@@ -336,7 +336,7 @@ a {
     right: 0;
   }
 
-  /* باقي العناصر */
+ 
   .main-img {
     width: 90%; 
     margin-top: 20px;
@@ -361,6 +361,9 @@ a {
     margin-bottom: 20px;
   }
 }
+
+
+
 /* ===== Contact Us Section ===== */
 .contact-section {
   padding: 80px 20px;
@@ -461,13 +464,13 @@ a {
 }
 
 .icon-img {
-  width: 90px;              /* حجم الصورة */
+  width: 90px;              
   height: 90px;
-  border-radius: 50%;       /* يخليها دائرية */
-  object-fit: cover;        /* يضمن إن الصورة تملا الدائرة بدون تمدد غريب */
-  border: 4px solid #51aee5; /* إطار بلون CareNest الأزرق */
-  background-color: white;  /* خلفية بيضاء نظيفة */
-  padding: 8px;             /* مسافة خفيفة داخل الدائرة */
+  border-radius: 50%;     
+  object-fit: cover;       
+  border: 4px solid #51aee5; 
+  background-color: white;
+  padding: 8px;        
   margin-bottom: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
