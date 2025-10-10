@@ -39,11 +39,6 @@ function isActiveForm($form, $active_form) {
         <img src="images/heart_icon.png" class="heart" style="--x:0.5; --d:0.8; --delay:0.1;">
         <img src="images/heart_icon.png" class="heart" style="--x:0.7; --d:0.4; --delay:0.9;">
         <img src="images/heart_icon.png" class="heart" style="--x:0.9; --d:0.7; --delay:0.3;">
-        <img src="images/heart_icon.png" class="heart">
-        <img src="images/heart_icon.png" class="heart">
-        <img src="images/heart_icon.png" class="heart">
-        <img src="images/heart_icon.png" class="heart">
-
     </div>
 
 

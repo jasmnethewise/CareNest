@@ -10,13 +10,19 @@
 <body>
     <nav>
          <img src="images/CareNest.png" alt="CareNest Logo" class="logo">
-         <ul>
+
+         
+         <div class="menu-toggle" id="menu-toggle">
+            ☰
+         </div>
+
+         <ul id="nav-links">
             <li><a href="user_page.php">Home</a></li> 
             <li><a href="services.php">Services</a></li> 
             <li><a href="#">Chatbot</a></li> 
             <li><a href="#">Dashboard</a></li> 
             
-        </ul>
+         </ul>
 
         <div class="profile">
             <a href="profile.php"><i class="fa-solid fa-user"></i></a>
@@ -27,7 +33,7 @@
     <p class="hero-text">
         CareNest is a digital healthcare platform that provides simple and smart tools <br> for your well-being. From booking doctor consultations, calculating your BMI, <br> and exploring nearby health services, to chatting with our healthcare assistant, <br>everything is in one place. Our goal is to make healthcare more accessible and <br>easier for everyone.
     </p>
-    <a href="#"><button class="btn">BOOK NOW</button></a>
+    <a href="services.php"><button class="btn">BOOK NOW</button></a>
     
 
     <div class="blue-line"></div>
@@ -79,5 +85,14 @@
     </div>
   </div>
 </section>
+
+  <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
+
+        toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+    });
+  </script>
 </body>
 </html>

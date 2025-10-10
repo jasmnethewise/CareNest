@@ -14,10 +14,25 @@ $result = mysqli_query($conn, $query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Doctors</title>
     <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <nav>
+         <img src="images/CareNest.png" alt="CareNest Logo" class="logo">
+         <ul>
+            <li><a href="user_page.php">Home</a></li> 
+            <li><a href="#">Services</a></li> 
+            <li><a href="#">Chatbot</a></li> 
+            <li><a href="#">Dashboard</a></li> 
+            
+        </ul>
 
-    <h1 class="page-title">Meet Our Doctors</h1>
+        <div class="profile">
+            <a href="profile.php"><i class="fa-solid fa-user"></i></a>
+        </div>
+        
+    </nav>
+    <h1 class="page-title">Book With Our Doctors</h1>
 
     <div class="doctor-container">
         <?php while($row = mysqli_fetch_assoc($result)) { ?>

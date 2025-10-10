@@ -34,7 +34,7 @@ $profile_pic = !empty($user['profile_pic']) ? $user['profile_pic'] : 'images/pfp
     <p><strong>Specialization:</strong> <?php echo htmlspecialchars($user['specialization'] ?? 'Not added'); ?></p>
     <p><strong>Location:</strong> <?php echo htmlspecialchars($user['location'] ?? 'Not added'); ?></p>
     <p><strong>Phone:</strong> <?php echo htmlspecialchars($user['phone'] ?? 'Not added'); ?></p>
-    <p><strong>Available Times:</strong> <?php echo htmlspecialchars($user['available_times'] ?? 'Not added'); ?></p>
+    
 
     <a href="edit_doctor_profile.php" class="edit-btn">Edit Profile</a>
     <a href="logout.php" class="logout-btn">Logout</a>

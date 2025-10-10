@@ -10,14 +10,19 @@
 <body>
     <nav>
          <img src="images/CareNest.png" alt="CareNest Logo" class="logo">
-         <ul>
+
+         
+         <div class="menu-toggle" id="menu-toggle">
+            ☰
+         </div>
+
+         <ul id="nav-links">
             <li><a href="admin_page.php">Home</a></li> 
             <li><a href="#">Services</a></li> 
             <li><a href="#">Chatbot</a></li> 
             <li><a href="#">Dashboard</a></li> 
             
-        </ul>
-
+         </ul>
         <div class="profile">
             <a href="doctor_profile.php"><i class="fa-solid fa-user"></i></a>
         </div>
@@ -79,5 +84,14 @@
     </div>
   </div>
 </section>
+
+  <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navLinks = document.getElementById("nav-links");
+
+        toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+    });
+  </script>
 </body>
 </html>

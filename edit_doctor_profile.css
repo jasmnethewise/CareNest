@@ -13,9 +13,9 @@ body {
 }
 
 /* ====== Container ====== */
-.edit-profile-container {
+.profile-container {
   background: #fff;
-  width: 500px;
+  width: 600px;
   max-width: 90%;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -36,6 +36,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   margin-bottom: 25px;
+  margin-left: 25px;
 }
 
 .profile-pic img {
@@ -58,6 +59,7 @@ form {
   flex-direction: column;
   gap: 15px;
   text-align: left;
+  margin-right: 25px;
 }
 
 label {
@@ -74,6 +76,7 @@ input, textarea, select {
   font-size: 15px;
   transition: 0.2s;
   outline: none;
+  
 }
 
 input:focus, textarea:focus, select:focus {
@@ -114,4 +117,43 @@ button:hover {
 
 .back-link:hover {
   text-decoration: underline;
+}
+/* ====== Add Hospital Button ====== */
+.add-btn {
+  background: #00b4d8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  transition: background 0.3s ease;
+  width: 60%;
+}
+
+.add-btn:hover {
+  background: #0096c7;
+}
+.available-times {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.day-block {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.time-options {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.time-options input {
+  margin-right: 10px;
 }
