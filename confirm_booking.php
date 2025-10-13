@@ -2,9 +2,7 @@
 include 'config.php';
 session_start();
 
-$user_id = $_SESSION['user_id'];
-
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['id'])) {
     
     header("Location: login.php");
     exit();
@@ -19,7 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contact = isset($_POST['contact']) ? $_POST['contact'] : null;
 
     
-    $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 0;
+    $user_id = $_SESSION['id'];
+
+    if (empty($user_id)) {
+    die("⚠️ User not logged in properly. Session ID missing!");
+    }
 
     
     $query = "INSERT INTO bookings (doctor_id, user_id, appointment_type, day, time, location, contact_method)

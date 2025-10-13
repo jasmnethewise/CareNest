@@ -35,6 +35,8 @@ $available_times = !empty($doctor['available_times']) ? json_decode($doctor['ava
 </head>
 <body>
 
+    <button class="back-btn" onclick="window.location.href='services.php'">← Back</button>
+
     <div class="book-container">
         <div class="doctor-card">
             

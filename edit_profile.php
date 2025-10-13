@@ -2,7 +2,6 @@
 session_start();
 include 'config.php';
 
-
 if (!isset($_SESSION['id'])) {
     header("Location: login.php");
     exit();
@@ -10,12 +9,11 @@ if (!isset($_SESSION['id'])) {
 
 $user_id = $_SESSION['id'];
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $pronouns = mysqli_real_escape_string($conn, $_POST['pronouns']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
 
-    
     if (!empty($_FILES['profile_pic']['name'])) {
         $target_dir = "uploads/";
         if (!is_dir($target_dir)) {
@@ -26,18 +24,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $target_file = $target_dir . time() . "_" . $file_name;
         $file_type = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-        
         $allowed = ['jpg', 'jpeg', 'png', 'gif'];
 
         if (in_array($file_type, $allowed)) {
             move_uploaded_file($_FILES['profile_pic']['tmp_name'], $target_file);
-            $query = "UPDATE users SET name='$name', pronouns='$pronouns', profile_pic='$target_file' WHERE id='$user_id'";
+            $query = "UPDATE users SET name='$name', pronouns='$pronouns', phone='$phone', profile_pic='$target_file' WHERE id='$user_id'";
         } else {
             echo "<p style='color:red'>Only JPG, JPEG, PNG & GIF files are allowed.</p>";
-            $query = "UPDATE users SET name='$name', pronouns='$pronouns' WHERE id='$user_id'";
+            $query = "UPDATE users SET name='$name', pronouns='$pronouns', phone='$phone' WHERE id='$user_id'";
         }
     } else {
-        $query = "UPDATE users SET name='$name', pronouns='$pronouns' WHERE id='$user_id'";
+        // ✅ هنا أضفنا phone كمان، دي اللي كانت ناقصة
+        $query = "UPDATE users SET name='$name', pronouns='$pronouns', phone='$phone' WHERE id='$user_id'";
     }
 
     mysqli_query($conn, $query);
@@ -45,8 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit();
 }
 
-
-$result = mysqli_query($conn, "SELECT name, pronouns, profile_pic FROM users WHERE id='$user_id'");
+$result = mysqli_query($conn, "SELECT name, pronouns, profile_pic, phone FROM users WHERE id='$user_id'");
 $user = mysqli_fetch_assoc($result);
 $profile_pic = !empty($user['profile_pic']) ? $user['profile_pic'] : 'images/default_profile.png';
 ?>
@@ -74,6 +71,9 @@ $profile_pic = !empty($user['profile_pic']) ? $user['profile_pic'] : 'images/def
 
         <label for="pronouns">Pronouns</label>
         <input type="text" name="pronouns" value="<?php echo htmlspecialchars($user['pronouns']); ?>" placeholder="e.g. he/him">
+
+        <label for="phone">Phone Number</label>
+        <input type="text" name="phone" value="<?php echo htmlspecialchars($user['phone']); ?>" placeholder="e.g. 01012345678">
 
         <button type="submit">Save Changes</button>
         <a href="profile.php" class="back-btn">Cancel</a>

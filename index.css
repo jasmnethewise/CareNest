@@ -13,31 +13,6 @@ body {
   background-size: 600% 600%;
   animation: gradientMove 15s ease infinite;
 }
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-@keyframes float {
-  0% { transform: translateY(0); opacity: 0.4; }
-  50% { transform: translateY(-30px); opacity: 0.7; }
-  100% { transform: translateY(0); opacity: 0.4; }
-}
-.shape {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
-  filter: blur(10px); 
-  z-index: 0; 
-}
-.shape1 { width: 100px; height: 100px; top: 200px; left: 100px; animation-delay: 0s; }
-.shape2 { width: 80px; height: 80px; top: 400px; left: 300px; animation-delay: 2s; }
-.shape3 { width: 120px; height: 120px; top: 600px; left: 600px; animation-delay: 4s; }
-.main-content {
-  position: relative;
-  z-index: 2;
-}
 
 nav {
   display: flex;

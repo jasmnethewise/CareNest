@@ -24,6 +24,8 @@ $profile_pic = !empty($user['profile_pic']) ? $user['profile_pic'] : 'images/pfp
     <link rel="stylesheet" href="doctor_profile.css">
 </head>
 <body>
+
+<button class="back-btn" onclick="window.location.href='admin_page.php'">← Back</button>
 <div class="profile-container">
     <div class="banner"></div>
     <div class="profile-pic">

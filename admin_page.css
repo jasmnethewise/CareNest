@@ -300,16 +300,30 @@ a {
     height: 60px;            
     padding: 10px 20px;
   }
+  .menu-toggle {
+    display: block; 
+    margin-right: -470px;
+    z-index: 1100;
+  }
+
+  .profile {
+    margin-right: 150px;  
+  }
+  .profile a {
+    color: #dc3d87;       
+    font-size: 26px;      
+    transition: 0.3s;
+  }
+  .profile a:hover {
+    color: #51aee5;       
+    transform: scale(1.2); 
+  }
 
   .logo {
     width: 150px; 
   }
 
-  .menu-toggle {
-    display: block; 
-    margin-right: 15px;
-    z-index: 1100;
-  }
+
 
   nav ul {
     display: none;
@@ -333,7 +347,7 @@ a {
 
   nav ul.show {
     display: flex;
-    right: 0;
+    right: -50px;
   }
 
  

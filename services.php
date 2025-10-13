@@ -21,8 +21,8 @@ $result = mysqli_query($conn, $query);
          <img src="images/CareNest.png" alt="CareNest Logo" class="logo">
          <ul>
             <li><a href="user_page.php">Home</a></li> 
-            <li><a href="#">Services</a></li> 
-            <li><a href="#">Chatbot</a></li> 
+            <li><a href="services.php">Services</a></li> 
+            <li><a href="chatbot.html">Chatbot</a></li> 
             <li><a href="#">Dashboard</a></li> 
             
         </ul>

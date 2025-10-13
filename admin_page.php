@@ -18,8 +18,8 @@
 
          <ul id="nav-links">
             <li><a href="admin_page.php">Home</a></li> 
-            <li><a href="#">Services</a></li> 
-            <li><a href="#">Chatbot</a></li> 
+            <li><a href="doctor_bookings.php">Services</a></li> 
+            <li><a href="admin_chatbot.html">Chatbot</a></li> 
             <li><a href="#">Dashboard</a></li> 
             
          </ul>

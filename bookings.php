@@ -59,7 +59,7 @@ td {
 if (mysqli_num_rows($result) > 0) {
   while ($row = mysqli_fetch_assoc($result)) {
     echo "<tr>
-            <td>{$row['user_name']}</td>
+            <td>{$row['name']}</td>
             <td>{$row['appointment_type']}</td>
             <td>{$row['day']}</td>
             <td>{$row['time']}</td>

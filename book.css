@@ -8,6 +8,28 @@ body {
     margin: 0;
 }
 
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #ffffff;
+    color: #dc3d87;
+    border: 2px solid #dc3d87;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.back-btn:hover {
+    background: #dc3d87;
+    color: white;
+    transform: scale(1.05);
+}
+
 .book-container {
     display: flex;
     justify-content: center;

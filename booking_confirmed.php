@@ -10,7 +10,9 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: #e9f9f1;
+            background: linear-gradient(270deg, rgba(81, 174, 229, 0.3), rgba(100, 200, 255, 0.3), rgba(62, 192, 255, 0.3));
+            background-size: 600% 600%;
+            animation: gradientMove 15s ease infinite;
             font-family: Arial, sans-serif;
         }
         .confirmed-box {
@@ -21,7 +23,7 @@
             text-align: center;
         }
         .confirmed-box h1 {
-            color: #2ecc71;
+            color: #dc3d87;
             margin-bottom: 10px;
         }
         .confirmed-box p {
@@ -31,21 +33,21 @@
             display: inline-block;
             margin-top: 15px;
             padding: 10px 20px;
-            background: #2ecc71;
+            background: #dc3d87;
             color: white;
             border-radius: 8px;
             text-decoration: none;
         }
         a.back-btn:hover {
-            background: #27ae60;
+            background: #dc3d87;
         }
     </style>
 </head>
 <body>
     <div class="confirmed-box">
-        <h1>✅ Appointment Confirmed!</h1>
+        <h1> ✔️ Appointment Confirmed!</h1>
         <p>Your booking has been successfully submitted.</p>
-        <a href="user_dashboard.php" class="back-btn">Back to Home</a>
+        <a href="user_page.php" class="back-btn">Back to Home</a>
     </div>
 </body>
 </html>
