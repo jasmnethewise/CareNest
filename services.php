@@ -32,6 +32,8 @@ $result = mysqli_query($conn, $query);
         </div>
         
     </nav>
+    <a href="bmi_calculator.php" class="top-right-btn">Calculate Your BMI</a>
+
     <h1 class="page-title">Book With Our Doctors</h1>
 
     <div class="doctor-container">

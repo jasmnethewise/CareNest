@@ -3,7 +3,6 @@ include 'config.php';
 session_start();
 
 if (!isset($_SESSION['id'])) {
-    
     header("Location: login.php");
     exit();
 }
@@ -16,19 +15,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $location = isset($_POST['location']) ? $_POST['location'] : null;
     $contact = isset($_POST['contact']) ? $_POST['contact'] : null;
 
-    
     $user_id = $_SESSION['id'];
 
     if (empty($user_id)) {
-    die("⚠️ User not logged in properly. Session ID missing!");
+        die("⚠️ User not logged in properly. Session ID missing!");
     }
 
-    
-    $query = "INSERT INTO bookings (doctor_id, user_id, appointment_type, day, time, location, contact_method)
-              VALUES ('$doctor_id', '$user_id', '$appointment_type', '$day', '$time', '$location', '$contact')";
+    // ✅ هنا أضفنا تاريخ الحجز
+    $booking_date = date('Y-m-d');
+
+    // ✅ عدّلنا جملة الـ INSERT عشان تضيف العمود الجديد
+    $query = "INSERT INTO bookings (doctor_id, user_id, appointment_type, day, time, location, contact_method, booking_date)
+              VALUES ('$doctor_id', '$user_id', '$appointment_type', '$day', '$time', '$location', '$contact', '$booking_date')";
 
     if (mysqli_query($conn, $query)) {
-        
         header("Location: booking_confirmed.php");
         exit();
     } else {

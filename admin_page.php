@@ -20,7 +20,7 @@
             <li><a href="admin_page.php">Home</a></li> 
             <li><a href="doctor_bookings.php">Services</a></li> 
             <li><a href="admin_chatbot.html">Chatbot</a></li> 
-            <li><a href="#">Dashboard</a></li> 
+            <li><a href="doctor_dashboard.php">Dashboard</a></li> 
             
          </ul>
         <div class="profile">
