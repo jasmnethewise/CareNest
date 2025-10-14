@@ -302,7 +302,7 @@ a {
   }
   .menu-toggle {
     display: block; 
-    margin-right: -470px;
+    margin-right: -350px;
     z-index: 1100;
   }
 
@@ -378,7 +378,7 @@ a {
 
 
 
-/* ===== Contact Us Section ===== */
+
 .contact-section {
   padding: 80px 20px;
   text-align: center;

@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $query = "UPDATE users SET name='$name', pronouns='$pronouns', phone='$phone' WHERE id='$user_id'";
         }
     } else {
-        // ✅ هنا أضفنا phone كمان، دي اللي كانت ناقصة
+       
         $query = "UPDATE users SET name='$name', pronouns='$pronouns', phone='$phone' WHERE id='$user_id'";
     }
 

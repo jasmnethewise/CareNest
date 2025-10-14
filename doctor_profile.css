@@ -41,7 +41,7 @@ body {
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  width: 900px;
+  width: 600px;
   text-align: center;
   overflow: hidden;
   padding-bottom: 20px;
@@ -106,7 +106,7 @@ p strong {
   background: #e63946;
 }
 
-/* موبايل */
+
 @media (max-width: 500px) {
   .profile-container {
     width: 90%;

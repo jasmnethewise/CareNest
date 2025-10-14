@@ -325,7 +325,7 @@ a {
 }
 
 
-/* ===== Contact Us Section ===== */
+
 .contact-section {
   padding: 80px 20px;
   text-align: center;
@@ -442,7 +442,7 @@ a {
 }
 
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .contact-form input {
     width: 90%;

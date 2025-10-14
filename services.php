@@ -17,21 +17,8 @@ $result = mysqli_query($conn, $query);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <nav>
-         <img src="images/CareNest.png" alt="CareNest Logo" class="logo">
-         <ul>
-            <li><a href="user_page.php">Home</a></li> 
-            <li><a href="services.php">Services</a></li> 
-            <li><a href="chatbot.html">Chatbot</a></li> 
-            <li><a href="#">Dashboard</a></li> 
-            
-        </ul>
-
-        <div class="profile">
-            <a href="profile.php"><i class="fa-solid fa-user"></i></a>
-        </div>
-        
-    </nav>
+    <button class="back-btn" onclick="window.location.href='user_page.php'">← Back</button>
+    
     <a href="bmi_calculator.php" class="top-right-btn">Calculate Your BMI</a>
 
     <h1 class="page-title">Book With Our Doctors</h1>

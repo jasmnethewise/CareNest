@@ -18,13 +18,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_id = $_SESSION['id'];
 
     if (empty($user_id)) {
-        die("⚠️ User not logged in properly. Session ID missing!");
+        die(" User not logged in properly. Session ID missing!");
     }
 
-    // ✅ هنا أضفنا تاريخ الحجز
+    
     $booking_date = date('Y-m-d');
 
-    // ✅ عدّلنا جملة الـ INSERT عشان تضيف العمود الجديد
+    
     $query = "INSERT INTO bookings (doctor_id, user_id, appointment_type, day, time, location, contact_method, booking_date)
               VALUES ('$doctor_id', '$user_id', '$appointment_type', '$day', '$time', '$location', '$contact', '$booking_date')";
 
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("Location: booking_confirmed.php");
         exit();
     } else {
-        echo "❌ Error: " . mysqli_error($conn);
+        echo " Error: " . mysqli_error($conn);
     }
 } else {
     header("Location: index.php");

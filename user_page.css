@@ -309,8 +309,12 @@ a {
 
   .menu-toggle {
     display: block; 
-    margin-right: 15px;
+    margin-right: -350px;
     z-index: 1100;
+  }
+
+  .profile {
+    margin-right: 150px;  
   }
 
   nav ul {
@@ -335,7 +339,7 @@ a {
 
   nav ul.show {
     display: flex;
-    right: 0;
+    right: -50px;
   }
 
  
@@ -365,7 +369,7 @@ a {
 }
 
 
-/* ===== Contact Us Section ===== */
+
 .contact-section {
   padding: 80px 20px;
   text-align: center;
@@ -482,7 +486,7 @@ a {
 }
 
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .contact-form input {
     width: 90%;

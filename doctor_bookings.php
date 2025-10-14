@@ -9,14 +9,14 @@ if (!isset($_SESSION['id'])) {
 
 $doctor_id = $_SESSION['id'];
 
-// ✅ لو الدكتور ضغط على Confirm
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_booking'])) {
     $booking_id = intval($_POST['booking_id']);
     $update_query = "UPDATE bookings SET status = 'confirmed' WHERE id = '$booking_id' AND doctor_id = '$doctor_id'";
     mysqli_query($conn, $update_query);
 }
 
-// 📋 جلب الحجوزات
+
 $query = "SELECT 
             b.id AS booking_id,
             u.name AS patient_name,
@@ -89,7 +89,7 @@ $result = mysqli_query($conn, $query);
         .back-btn {
             position: fixed;
             top: 20px;
-            left: 1050px;
+            left: 27px;
             background: #ffffff;
             color: #dc3d87;
             border: 2px solid #dc3d87;
@@ -111,7 +111,7 @@ $result = mysqli_query($conn, $query);
 </head>
 <body>
     <button class="back-btn" onclick="window.location.href='admin_page.php'">← Back</button>
-    <h1 style="color: #dc3d87;">Welcome, <?php echo $_SESSION['name']; ?></h1>
+    <h1 style="color: #dc3d87; margin-top: 70px;">Welcome, <?php echo $_SESSION['name']; ?></h1>
     <h3 style="color: #dc3d87;">Your Appointments</h3>
 
     <table>

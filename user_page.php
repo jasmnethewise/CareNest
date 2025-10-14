@@ -20,7 +20,7 @@
             <li><a href="user_page.php">Home</a></li> 
             <li><a href="services.php">Services</a></li> 
             <li><a href="chatbot.html">Chatbot</a></li> 
-            <li><a href="#">Dashboard</a></li> 
+            <li><a href="user_dashboard.php">Dashboard</a></li> 
             
          </ul>
 
@@ -71,8 +71,8 @@
   <div class="contact-info">
     <div class="info-box">
       <img src="images/plus.jpeg" alt="About Icon" class="icon-img">
-      <h3>ABOUT CLUB</h3>
-      <p>Running Guide<br>booking</p>
+      <h3>ABOUT WEB</h3>
+      <p>well-being<br>consultations</p>
     </div>
     <div class="info-box">
       <img src="images/phone.jpeg" alt="Phone Icon" class="icon-img">
@@ -82,7 +82,7 @@
     <div class="info-box">
       <img src="images/location.jpeg" alt="Location Icon" class="icon-img">
       <h3>OUR OFFICE LOCATION</h3>
-      <p>The Interior Design Studio Company</p>
+      <p>Montaza, Mandara ST, Alexandria, Egypt</p>
     </div>
   </div>
 </section>
