@@ -89,5 +89,18 @@ function isActiveForm($form, $active_form) {
 
     <script src="login.js"></script>
 
+    <script>
+
+        const socialButtons = document.querySelectorAll('.social-icons button');
+
+        socialButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                alert('Feature coming soon!');
+            });
+        });
+    </script>
+
+
 </body>
 </html>

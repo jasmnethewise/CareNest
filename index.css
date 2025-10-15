@@ -254,6 +254,8 @@ a {
   color: #dc3d87;
 }
 
+
+
 @media (max-width: 768px) {
   nav {
     flex-direction: row;       
