@@ -54,12 +54,7 @@ function isActiveForm($form, $active_form) {
                     <input type="password" name="password" placeholder="Password" required>
                     <button type="submit" name="login" >Login</button>
                 </form>
-                <p>or sign up with</p>
-                <div class="social-icons">
-                    <button class="google"><i class="fa-brands fa-google"></i></button>
-                    <button class="facebook"><i class="fa-brands fa-facebook-f"></i></button>
-                    <button class="apple"><i class="fa-brands fa-apple"></i></button>
-                </div>
+                
                 <p class="terms">By creating an account, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
                 <p>Don't have an account? <a href="#" onclick="showForm('register-form')">Create account</a></p>
             </div>

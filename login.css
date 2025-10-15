@@ -163,14 +163,6 @@ button:hover {
     transition: all 0.3s ease-in-out;
 }
 
-.google { color: #db4437; }
-.facebook { color: #1877f2; }
-.apple { color: #000; }
-
-
-.google:hover { background-color: #db4437; color: white; }
-.facebook:hover { background-color: #1877f2; color: white; }
-.apple:hover { background-color: #000; color: white; }
 
 .terms {
     font-size: 12px;
